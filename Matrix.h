@@ -52,6 +52,16 @@ public:
     return temp;
   }
 
+  void const Display()
+  {
+    for(unsigned i = 0; i < this->mat.size(); ++i)
+      {
+        for(unsigned j = 0; j < this->mat[0].size(); ++j)
+          {std::cout << std::fixed << std::setprecision(6) << this->mat[i][j];}
+        std::cout << std::endl;
+      }
+  }
+
   Matrix<T> operator+(Matrix<T> const &m1)
   {
     Matrix<T> temp;
@@ -116,7 +126,7 @@ public:
 
         this->mat.push_back(std::vector<T>());
 
-        while (ss >> value)
+        while (ss >> std::fixed >> std::setprecision(6) >> value)
         {
             this->mat[i].push_back(value);
         }
