@@ -106,11 +106,12 @@ public:
     return m;
   }
 
-  void MultiplyScalar(T scalar)
+  Matrix<T> operator*(T scalar)
   {
     for(unsigned i = 0; i < this->mat.size(); ++i)
         for(unsigned j = 0; j < this->mat[0].size(); ++j)
           this->mat[i][j] *= scalar;
+    return *this;
   }
 
   void LoadMatrix(std::string &file)

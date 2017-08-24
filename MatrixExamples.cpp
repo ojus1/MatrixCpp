@@ -62,8 +62,8 @@ int main()
   std::cout << "Dimensions of matrix4 : " << matrix4.mat.size() << "x" << matrix4.mat[0].size() << std::endl;
   std::cout << std::endl;
 
-  matrix5 = matrix1;
-  matrix5.MultiplyScalar(3.20);
+  matrix5 = matrix1*(3.20);
+  //matrix5.MultiplyScalar(3.20);
   for(unsigned i = 0; i < matrix5.mat.size(); ++i)
   {
     for(unsigned j = 0; j < matrix5.mat[0].size(); ++j)
@@ -76,7 +76,8 @@ int main()
   std::cout << "Dimensions of matrix5 : " << matrix5.mat.size() << "x" << matrix5.mat[0].size() << std::endl;
   std::cout << std::endl;
 
-  matrix2.MultiplyScalar(1.23);
+  matrix2 = matrix2*(1.23);
+  //matrix2.MultiplyScalar(1.23);
   matrix6 = matrix1.Transpose() + matrix2;
   for(unsigned i = 0; i < matrix6.mat.size(); ++i)
   {
